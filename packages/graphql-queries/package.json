@@ -15,7 +15,7 @@
     "build": "graphql-codegen --config codegen.ts && tsc",
     "codegen": "graphql-codegen --config codegen.ts",
     "dev": "graphql-codegen --config codegen.ts --watch",
-    "lint": "eslint src --ext .ts",
+    "lint": "eslint src",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

@@ -1,4 +1,5 @@
 import js from "@eslint/js";
+import { FlatCompat } from "@eslint/eslintrc";
 import tsParser from "@typescript-eslint/parser";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
 import react from "eslint-plugin-react";
@@ -7,9 +8,25 @@ import jsxA11y from "eslint-plugin-jsx-a11y";
 import importPlugin from "eslint-plugin-import";
 import shopify from "@shopify/eslint-plugin";
 import prettier from "eslint-config-prettier";
+import { fileURLToPath } from "node:url";
+import path from "node:path";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+  recommendedConfig: js.configs.recommended,
+});
 
 export default [
   js.configs.recommended,
+  ...compat.extends(
+    "plugin:@shopify/esnext",
+    "plugin:@shopify/typescript",
+    "plugin:@shopify/typescript-type-checking",
+    "plugin:@shopify/react",
+    "plugin:@shopify/prettier",
+  ),
   {
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
@@ -27,10 +44,10 @@ export default [
       "react-hooks": reactHooks,
       "jsx-a11y": jsxA11y,
       import: importPlugin,
+      shopify,
     },
     rules: {
       ...tsPlugin.configs.recommended.rules,
-      ...tsPlugin.configs["recommended-requiring-type-checking"].rules,
       ...react.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
       "react/react-in-jsx-scope": "off",
@@ -60,6 +77,15 @@ export default [
   {
     files: ["**/*.liquid"],
     rules: {},
+  },
+  {
+    ignores: [
+      "**/dist/**",
+      "**/build/**",
+      "**/node_modules/**",
+      "**/.turbo/**",
+      "**/assets/tailwind.css",
+    ],
   },
   prettier,
 ];
