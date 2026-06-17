@@ -48,3 +48,4 @@ coverage/
 # Changeset
 .changeset/*.md
 !.changeset/config.json
+.vscode/
