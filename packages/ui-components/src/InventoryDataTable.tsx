@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import type { ComponentProps, FC } from "react";
 import {
   DataTable,
   Thumbnail,
@@ -65,7 +65,9 @@ export const InventoryDataTable: FC<InventoryDataTableProps> = ({
   );
 };
 
-function getStatusTone(status: InventoryRow["status"]) {
+function getStatusTone(
+  status: InventoryRow["status"],
+): ComponentProps<typeof Badge>["tone"] {
   switch (status) {
     case "active":
       return "success";
@@ -74,6 +76,6 @@ function getStatusTone(status: InventoryRow["status"]) {
     case "archived":
       return "critical";
     default:
-      return "default";
+      return undefined;
   }
 }
