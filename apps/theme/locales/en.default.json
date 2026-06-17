@@ -1,0 +1,18 @@
+{
+  "general": {
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
+    "404": {
+      "title": "Page not found",
+      "subtext": "The page you requested does not exist."
+    }
+  },
+  "sections": {
+    "product_spotlight": {
+      "fallback_title": "Featured Product",
+      "add_to_cart": "Add to cart"
+    }
+  }
+}

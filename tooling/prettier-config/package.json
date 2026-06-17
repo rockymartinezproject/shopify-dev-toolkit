@@ -1,0 +1,7 @@
+{
+  "name": "@shopify-dev-toolkit/prettier-config",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./index.json",
+  "files": ["./index.json"]
+}

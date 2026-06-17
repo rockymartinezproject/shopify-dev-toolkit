@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-shopify-green: #008060;
+    --color-shopify-dark: #002e25;
+  }
+}

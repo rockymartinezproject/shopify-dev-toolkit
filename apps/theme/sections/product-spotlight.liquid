@@ -1,0 +1,146 @@
+{% assign product = section.settings.product %}
+{% assign badge = section.settings.badge_text %}
+
+<section
+  class="py-16 {% if section.settings.background == 'dark' %}bg-shopify-dark text-white{% else %}bg-white text-shopify-dark{% endif %}"
+  data-section-id="{{ section.id }}"
+>
+  <div class="container mx-auto px-4">
+    <div class="grid items-center gap-10 md:grid-cols-2">
+      <div class="@container">
+        {% if product.featured_image %}
+          {% render 'responsive-image',
+            image: product.featured_image,
+            alt: product.featured_image.alt | default: product.title,
+            class: 'rounded-lg shadow-lg',
+            sizes: '(min-width: 768px) 50vw, 100vw'
+          %}
+        {% else %}
+          <div class="aspect-square rounded-lg bg-gray-100 flex items-center justify-center">
+            <span class="text-gray-400">No image</span>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="space-y-6">
+        {% if badge != blank %}
+          <span class="inline-block rounded bg-shopify-green px-3 py-1 text-sm font-medium text-white">
+            {{ badge }}
+          </span>
+        {% endif %}
+
+        <h2 class="text-polaris-2xl">
+          {{ product.title | default: section.settings.heading }}
+        </h2>
+
+        {% if section.settings.show_metafields %}
+          <div class="space-y-2">
+            {% if product.metafields.custom.subtitle != blank %}
+              <p class="text-polaris-lg text-shopify-green">
+                {{ product.metafields.custom.subtitle }}
+              </p>
+            {% endif %}
+            {% if product.metafields.custom.material != blank %}
+              <p class="text-polaris-sm text-opacity-80">
+                <span class="font-semibold">Material:</span> {{ product.metafields.custom.material }}
+              </p>
+            {% endif %}
+            {% if product.metafields.custom.care_instructions != blank %}
+              <p class="text-polaris-sm text-opacity-80">
+                <span class="font-semibold">Care:</span> {{ product.metafields.custom.care_instructions }}
+              </p>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        <div class="text-polaris-xl font-semibold">
+          {{ product.price | money_with_currency }}
+        </div>
+
+        {% if section.settings.description != blank %}
+          <div class="prose max-w-none">
+            {{ section.settings.description }}
+          </div>
+        {% endif %}
+
+        {% if product != blank %}
+          <form method="post" action="/cart/add" class="flex flex-wrap items-center gap-4">
+            <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+            <button
+              type="submit"
+              class="rounded bg-shopify-green px-6 py-3 font-medium text-white transition hover:bg-shopify-dark"
+            >
+              {{ section.settings.button_text }}
+            </button>
+          </form>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Spotlight",
+  "tag": "section",
+  "class": "section-product-spotlight",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Featured Product"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "New arrival"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Add to cart"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_metafields",
+      "label": "Show product metafields",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Background",
+      "options": [
+        { "value": "light", "label": "Light" },
+        { "value": "dark", "label": "Dark" }
+      ],
+      "default": "light"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Spotlight",
+      "settings": {
+        "heading": "Featured Product",
+        "badge_text": "New arrival",
+        "button_text": "Add to cart",
+        "show_metafields": true,
+        "background": "light"
+      }
+    }
+  ]
+}
+{% endschema %}

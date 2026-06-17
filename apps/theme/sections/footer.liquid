@@ -1,0 +1,44 @@
+<footer class="bg-shopify-dark py-10 text-white">
+  <div class="container mx-auto px-4">
+    <div class="grid gap-8 md:grid-cols-3">
+      <div>
+        <h3 class="mb-4 text-lg font-semibold">{{ shop.name }}</h3>
+        <p class="text-white/70">{{ shop.description }}</p>
+      </div>
+      <div>
+        <h3 class="mb-4 text-lg font-semibold">Quick Links</h3>
+        <ul class="space-y-2">
+          {% for link in linklists.footer.links %}
+            <li>
+              <a href="{{ link.url }}" class="text-white/70 hover:text-white">
+                {{ link.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        <p class="text-white/50">&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Footer menu",
+      "default": "footer"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer"
+    }
+  ]
+}
+{% endschema %}

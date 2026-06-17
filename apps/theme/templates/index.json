@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "product-spotlight": {
+      "type": "product-spotlight",
+      "settings": {
+        "heading": "Product Spotlight",
+        "badge_text": "New arrival",
+        "button_text": "Add to cart",
+        "show_metafields": true,
+        "background": "light"
+      }
+    }
+  },
+  "order": ["product-spotlight"]
+}

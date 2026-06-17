@@ -1,0 +1,33 @@
+name = "shopify-dev-toolkit-admin"
+client_id = "YOUR_API_KEY"
+application_url = "https://your-tunnel.ngrok.io"
+embedded = true
+
+[build]
+dev_store_url = "your-store.myshopify.com"
+include_config_on_deploy = true
+
+[auth]
+redirect_urls = [
+  "https://your-tunnel.ngrok.io/auth/callback",
+  "https://your-tunnel.ngrok.io/auth/shopify/callback",
+]
+
+[webhooks]
+api_version = "2024-04"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "https://your-tunnel.ngrok.io/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "products/create", "products/update", "products/delete" ]
+  uri = "https://your-tunnel.ngrok.io/webhooks/products"
+
+[app_proxy]
+url = "https://your-tunnel.ngrok.io/proxy"
+subpath = "toolkit"
+prefix = "apps"
+
+[pos]
+embedded = false

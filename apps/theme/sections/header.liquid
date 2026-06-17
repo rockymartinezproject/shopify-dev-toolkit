@@ -1,0 +1,39 @@
+<header class="border-b border-gray-200 bg-white">
+  <div class="container mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <a href="{{ routes.root_url }}" class="text-xl font-bold text-shopify-green">
+        {{ shop.name }}
+      </a>
+      <nav>
+        <ul class="flex gap-6">
+          {% for link in linklists.main-menu.links %}
+            <li>
+              <a href="{{ link.url }}" class="text-polaris-md hover:text-shopify-green">
+                {{ link.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Header"
+    }
+  ]
+}
+{% endschema %}

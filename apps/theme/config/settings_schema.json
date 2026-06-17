@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Theme settings",
+    "settings": [
+      {
+        "type": "color",
+        "id": "colors_brand",
+        "label": "Brand color",
+        "default": "#008060"
+      },
+      {
+        "type": "color",
+        "id": "colors_text",
+        "label": "Text color",
+        "default": "#002e25"
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "url",
+        "id": "social_facebook_link",
+        "label": "Facebook"
+      },
+      {
+        "type": "url",
+        "id": "social_instagram_link",
+        "label": "Instagram"
+      }
+    ]
+  }
+]

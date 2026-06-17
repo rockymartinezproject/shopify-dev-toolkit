@@ -1,0 +1,38 @@
+{
+  "name": "@shopify-dev-toolkit/admin",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext .ts,.tsx",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.9.10",
+    "@shopify/app-bridge": "^3.7.10",
+    "@shopify/app-bridge-react": "^4.1.3",
+    "@shopify/polaris": "^12.27.0",
+    "@shopify/shopify-api": "^9.7.0",
+    "graphql": "^16.8.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.23.0"
+  },
+  "devDependencies": {
+    "@shopify-dev-toolkit/eslint-config": "workspace:*",
+    "@shopify-dev-toolkit/graphql-queries": "workspace:*",
+    "@shopify-dev-toolkit/typescript-config": "workspace:*",
+    "@shopify-dev-toolkit/ui-components": "workspace:*",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.10"
+  }
+}

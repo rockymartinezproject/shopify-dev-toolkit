@@ -1,0 +1,36 @@
+{
+  "name": "shopify-dev-toolkit",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Production-ready Shopify development toolkit with Liquid 2.0 sections, GraphQL Admin API queries, React Polaris components, and Tailwind CSS theme scaffolding.",
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "prepare": "husky",
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,liquid,yml,yaml}\"",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build --filter=docs^... && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@shopify/prettier-plugin-liquid": "^1.4.4",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "turbo": "^1.13.3"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,json,md,liquid,yml,yaml}": [
+      "prettier --write"
+    ]
+  }
+}

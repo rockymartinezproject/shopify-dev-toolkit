@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "shopify.theme-check-vscode",
+    "shopify.polaris-for-vscode",
+    "bradlc.vscode-tailwindcss",
+    "graphql.vscode-graphql",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode"
+  ]
+}

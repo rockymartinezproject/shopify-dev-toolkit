@@ -1,0 +1,22 @@
+{
+  "name": "@shopify-dev-toolkit/theme",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"pnpm run tailwind:watch\" \"shopify theme dev --store=$SHOPIFY_FLAG_STORE\"",
+    "build": "pnpm run tailwind:build",
+    "tailwind:build": "tailwindcss -i ./assets/tailwind.input.css -o ./assets/tailwind.css --minify",
+    "tailwind:watch": "tailwindcss -i ./assets/tailwind.input.css -o ./assets/tailwind.css --watch",
+    "lint": "shopify theme check",
+    "deploy": "shopify theme push --store=$SHOPIFY_FLAG_STORE --theme=$SHOPIFY_THEME_ID"
+  },
+  "devDependencies": {
+    "@shopify-dev-toolkit/tailwind-config": "workspace:*",
+    "@shopify/cli": "^3.59.0",
+    "@shopify/theme": "^3.59.0",
+    "autoprefixer": "^10.4.19",
+    "concurrently": "^8.2.2",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3"
+  }
+}

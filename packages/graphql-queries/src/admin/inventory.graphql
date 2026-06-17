@@ -1,0 +1,58 @@
+fragment ProductFields on Product {
+  id
+  title
+  status
+  featuredImage {
+    id
+    url
+    altText
+  }
+}
+
+fragment InventoryItemFields on InventoryItem {
+  id
+  sku
+  unitCost {
+    amount
+    currencyCode
+  }
+  inventoryLevels(first: 10) {
+    edges {
+      node {
+        id
+        available
+        location {
+          id
+          name
+        }
+      }
+    }
+  }
+}
+
+query GetInventoryWithCost($first: Int!, $after: String) {
+  products(first: $first, after: $after) {
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    edges {
+      cursor
+      node {
+        ...ProductFields
+        variants(first: 5) {
+          edges {
+            node {
+              id
+              title
+              sku
+              inventoryItem {
+                ...InventoryItemFields
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

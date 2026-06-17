@@ -1,0 +1,10 @@
+{
+  "name": "@shopify-dev-toolkit/typescript-config",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "base.json",
+    "react-app.json",
+    "react-library.json"
+  ]
+}
