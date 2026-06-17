@@ -191,9 +191,6 @@ importers:
 
   tooling/eslint-config:
     devDependencies:
-      '@eslint/eslintrc':
-        specifier: ^2.1.4
-        version: 2.1.4
       '@eslint/js':
         specifier: ^8.57.0
         version: 8.57.1
@@ -2532,11 +2529,11 @@ packages:
     peerDependencies:
       graphql: 14 - 16
 
-  graphql-tag@2.12.6:
-    resolution: {integrity: sha512-FdSNcu2QQcWnM2VNvSCCDCVS5PpPqpzgFT8+GXzqJuoDd0CBncxCY278u4mhRO7tMgo2JjgJA5aZ+nWSQ/Z+xg==}
+  graphql-tag@2.12.7:
+    resolution: {integrity: sha512-xnE/NFzy+0eIesvAsREJZ284zTl/wYuBAvpsFSDhRGRdRHdnE90M21Q3xAWyYInb0J756c6x0pIQ62+vtvOs1Q==}
     engines: {node: '>=10'}
     peerDependencies:
-      graphql: ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+      graphql: ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
   graphql-ws@6.0.8:
     resolution: {integrity: sha512-m3EOaNsUBXwAnkBWbzPfe0Nq8pXUfxsWnolC54sru3FzHvhTZL0Ouf/BoQsaGAXqM+YPerXOJ47BUnmgmoupCw==}
@@ -4169,7 +4166,7 @@ snapshots:
       '@wry/equality': 0.5.7
       '@wry/trie': 0.5.0
       graphql: 16.14.2
-      graphql-tag: 2.12.6(graphql@16.14.2)
+      graphql-tag: 2.12.7(graphql@16.14.2)
       hoist-non-react-statics: 3.3.2
       optimism: 0.18.1
       prop-types: 15.8.1
@@ -4831,7 +4828,7 @@ snapshots:
       change-case-all: 1.0.15
       dependency-graph: 0.11.0
       graphql: 16.14.2
-      graphql-tag: 2.12.6(graphql@16.14.2)
+      graphql-tag: 2.12.7(graphql@16.14.2)
       parse-filepath: 1.0.2
       tslib: 2.6.3
 
@@ -6954,7 +6951,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  graphql-tag@2.12.6(graphql@16.14.2):
+  graphql-tag@2.12.7(graphql@16.14.2):
     dependencies:
       graphql: 16.14.2
       tslib: 2.8.1

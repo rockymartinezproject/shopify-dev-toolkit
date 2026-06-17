@@ -7,7 +7,6 @@
     ".": "./index.js"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^2.1.4",
     "@eslint/js": "^8.57.0",
     "@shopify/eslint-plugin": "^48.0.2",
     "@types/eslint": "^8.56.12",

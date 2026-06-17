@@ -1,5 +1,4 @@
 import js from "@eslint/js";
-import { FlatCompat } from "@eslint/eslintrc";
 import tsParser from "@typescript-eslint/parser";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
 import react from "eslint-plugin-react";
@@ -8,25 +7,9 @@ import jsxA11y from "eslint-plugin-jsx-a11y";
 import importPlugin from "eslint-plugin-import";
 import shopify from "@shopify/eslint-plugin";
 import prettier from "eslint-config-prettier";
-import { fileURLToPath } from "node:url";
-import path from "node:path";
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-});
 
 export default [
   js.configs.recommended,
-  ...compat.extends(
-    "plugin:@shopify/esnext",
-    "plugin:@shopify/typescript",
-    "plugin:@shopify/typescript-type-checking",
-    "plugin:@shopify/react",
-    "plugin:@shopify/prettier",
-  ),
   {
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
@@ -48,8 +31,12 @@ export default [
     },
     rules: {
       ...tsPlugin.configs.recommended.rules,
+      ...tsPlugin.configs["recommended-requiring-type-checking"].rules,
       ...react.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
+      ...shopify.configs.core.rules,
+      ...shopify.configs.typescript.rules,
+      ...shopify.configs.react.rules,
       "react/react-in-jsx-scope": "off",
       "react/jsx-uses-react": "off",
       "import/order": [
