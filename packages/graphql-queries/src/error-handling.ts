@@ -19,7 +19,7 @@ export interface GraphQLResponseError {
 export function handleGraphQLErrors(errors?: GraphQLResponseError[]): void {
   if (!errors || errors.length === 0) return;
 
-  const [firstError] = errors;
+  const firstError = errors[0]!;
   throw new ShopifyGraphQLError(
     firstError.message,
     (firstError.extensions?.code as string) ?? "UNKNOWN_ERROR",
