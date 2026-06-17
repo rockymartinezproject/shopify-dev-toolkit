@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { EmptyState, Button } from "@shopify/polaris";
+import { EmptyState } from "@shopify/polaris";
 
 interface EmptyStateActionProps {
   heading: string;
@@ -17,7 +17,7 @@ export const EmptyStateAction: FC<EmptyStateActionProps> = ({
   return (
     <EmptyState
       heading={heading}
-      action={<Button onClick={onAction}>{actionLabel}</Button>}
+      action={{ content: actionLabel, onAction }}
       image="https://cdn.shopify.com/s/files/1/0262/4071/2726/files/emptystate-files.png"
       fullWidth
     >

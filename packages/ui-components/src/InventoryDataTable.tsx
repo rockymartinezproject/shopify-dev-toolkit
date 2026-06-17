@@ -20,13 +20,11 @@ export interface InventoryRow {
 
 interface InventoryDataTableProps {
   rows: InventoryRow[];
-  loading?: boolean;
   onRowClick?: (id: string) => void;
 }
 
 export const InventoryDataTable: FC<InventoryDataTableProps> = ({
   rows,
-  loading,
   onRowClick,
 }) => {
   const rowsData = rows.map((row) => [
@@ -45,7 +43,7 @@ export const InventoryDataTable: FC<InventoryDataTableProps> = ({
     row.location,
     row.available,
     row.cost ? `$${row.cost.toFixed(2)}` : "—",
-    <Badge key={`${row.id}-status`} status={getStatusTone(row.status)}>
+    <Badge key={`${row.id}-status`} tone={getStatusTone(row.status)}>
       {row.status}
     </Badge>,
   ]);
@@ -63,7 +61,6 @@ export const InventoryDataTable: FC<InventoryDataTableProps> = ({
       ]}
       headings={["", "Product", "SKU", "Location", "Available", "Cost", "Status"]}
       rows={rowsData}
-      loading={loading}
     />
   );
 };

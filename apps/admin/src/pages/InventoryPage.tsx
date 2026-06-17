@@ -51,7 +51,7 @@ export function InventoryPage() {
       primaryAction={<Button onClick={() => fetchMore({ variables: { first: PAGE_SIZE, after } })}>Refresh</Button>}
     >
       {error && (
-        <Banner title="Failed to load inventory" status="critical">
+        <Banner title="Failed to load inventory" tone="critical">
           {error.message}
         </Banner>
       )}
@@ -69,7 +69,7 @@ export function InventoryPage() {
             <ResourceSkeleton rows={PAGE_SIZE} />
           ) : (
             <>
-              <InventoryDataTable rows={rows} loading={loading && rows.length > 0} />
+              <InventoryDataTable rows={rows} />
               <div className="mt-4 flex justify-end">
                 <Pagination
                   hasPrevious={Boolean(after)}
