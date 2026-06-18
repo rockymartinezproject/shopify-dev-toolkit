@@ -32,12 +32,12 @@ importers:
       '@apollo/client':
         specifier: ^3.9.10
         version: 3.14.1(@types/react@18.3.31)(graphql-ws@6.0.8(graphql@16.14.2)(ws@8.21.0))(graphql@16.14.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@shopify/app-bridge':
-        specifier: ^3.7.11
-        version: 3.7.11
       '@shopify/app-bridge-react':
         specifier: ^4.1.10
         version: 4.2.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@shopify/app-bridge-types':
+        specifier: ^0.7.1
+        version: 0.7.1
       '@shopify/polaris':
         specifier: ^12.27.0
         version: 12.27.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1293,9 +1293,6 @@ packages:
   '@shopify/admin-api-client@0.2.9':
     resolution: {integrity: sha512-0K/P6e4bofCyk5BQ1OCiw9bq2d2hlxHM3B8FQEQclyMyU/b3oMowhy56sOQQODViaiZoDH/atmeWJwOX1di0Qg==}
 
-  '@shopify/app-bridge-core@1.5.0':
-    resolution: {integrity: sha512-bMbiGTivxS8hY86eLUe9xdO+BsZPkMZDPXiGmGYfnvXnInr01w9w/UcD02oU4zbA49GO09aCYYcJlo7pQu6VBA==}
-
   '@shopify/app-bridge-react@4.2.11':
     resolution: {integrity: sha512-yAvJg0jjGA2X8so7ObBg/7cl6NX7tv4HvAKYVW6edOFobtlGoJWKsZQN8DODSg7eisshGsA1tRHSnIbPkQxv6Q==}
     peerDependencies:
@@ -1304,9 +1301,6 @@ packages:
 
   '@shopify/app-bridge-types@0.7.1':
     resolution: {integrity: sha512-gq1mR/bElUNd7V78uEitmOE1mVgTHXeuTn9CuFFl26pOopY4FZG8rqJlXYt2Yfh3IKfN4y9Nrl9ewligo2Byww==}
-
-  '@shopify/app-bridge@3.7.11':
-    resolution: {integrity: sha512-kfIZqDs3JuzNN1fgjwZulWxJtCDW2SYSGkT4YJ3Xf/iXLBWOWfRMtPVsAQH6Fk2XtsSgLVPTxjS76j0Dxj1K5w==}
 
   '@shopify/cli@3.94.3':
     resolution: {integrity: sha512-J9KJeKZHxlI9XrVaTWdrS0Yzea/tqXrdRWOfj5UtLDXFmTcv2yFeT7qwy5QrtwrgV4DQqFmNiQ6SRzcTctKT/g==}
@@ -1746,10 +1740,6 @@ packages:
 
   base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
-
-  base64url@3.0.1:
-    resolution: {integrity: sha512-ir1UPr3dkwexU7FdV8qBBbNDRUhMmIekYMFZfi+C/sLNnRESKPl23nB9b2pltqfOQNnGzsDdId90AEtG5tCx4A==}
-    engines: {node: '>=6.0.0'}
 
   baseline-browser-mapping@2.10.38:
     resolution: {integrity: sha512-31/02mVB4yuQU6adKk5SlY6m+mxDwUq5KZkyYgnLrrKl7TEm1+3PyDtDBz2kOv/wxZz41GHsvV1A/u6RmiyBvw==}
@@ -3119,8 +3109,8 @@ packages:
     resolution: {integrity: sha512-dRB78srN/l6gqWulah9SrxeYnxeddIG30+GOqK/9OlLVyLg3HPnr6SqOWTWOXKRwC2eGYCkZ59NNuSgvSrpgOA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  node-releases@2.0.47:
-    resolution: {integrity: sha512-Uzmd6LXpouKo8EUK68IjH4+E01w/hXyV3R3g/geCJo+rXLNfh1xucB+LOzYEOQPSiUK3h/xZf0cQGcSsmyL2Og==}
+  node-releases@2.0.48:
+    resolution: {integrity: sha512-1uz8041X6LoI6ZSdZacM9lVY28vuzDlSKitnpbSNK0RfKoIJkX29NBPVEFXhnuSuEOA9Ww0xnPJ+ILWbGAv8DA==}
     engines: {node: '>=18'}
 
   normalize-path@2.1.1:
@@ -4052,9 +4042,6 @@ packages:
   web-streams-polyfill@3.3.3:
     resolution: {integrity: sha512-d2JWLCivmZYTSIoge9MsgFCZrt571BikcWGYkjC1khllbTeDlGqZ2D8vD8E/lJa8WGWbb7Plm8/XJYV7IJHZZw==}
     engines: {node: '>= 8'}
-
-  web-vitals@3.5.2:
-    resolution: {integrity: sha512-c0rhqNcHXRkY/ogGDJQxZ9Im9D19hDihbzSQJrsioex+KnFgmMzBiy57Z1EjkhX/+OjyBpclDCzz2ITtjokFmg==}
 
   webidl-conversions@3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
@@ -5370,8 +5357,6 @@ snapshots:
     dependencies:
       '@shopify/graphql-client': 0.10.4
 
-  '@shopify/app-bridge-core@1.5.0': {}
-
   '@shopify/app-bridge-react@4.2.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@shopify/app-bridge-types': 0.7.1
@@ -5381,12 +5366,6 @@ snapshots:
   '@shopify/app-bridge-types@0.7.1':
     dependencies:
       '@standard-schema/spec': 1.1.0
-
-  '@shopify/app-bridge@3.7.11':
-    dependencies:
-      '@shopify/app-bridge-core': 1.5.0
-      base64url: 3.0.1
-      web-vitals: 3.5.2
 
   '@shopify/cli@3.94.3':
     dependencies:
@@ -5942,8 +5921,6 @@ snapshots:
 
   base64-js@1.5.1: {}
 
-  base64url@3.0.1: {}
-
   baseline-browser-mapping@2.10.38: {}
 
   better-path-resolve@1.0.0:
@@ -5982,7 +5959,7 @@ snapshots:
       baseline-browser-mapping: 2.10.38
       caniuse-lite: 1.0.30001799
       electron-to-chromium: 1.5.375
-      node-releases: 2.0.47
+      node-releases: 2.0.48
       update-browserslist-db: 1.2.3(browserslist@4.28.2)
 
   buffer@5.7.1:
@@ -7516,7 +7493,7 @@ snapshots:
       fetch-blob: 3.2.0
       formdata-polyfill: 4.0.10
 
-  node-releases@2.0.47: {}
+  node-releases@2.0.48: {}
 
   normalize-path@2.1.1:
     dependencies:
@@ -8509,8 +8486,6 @@ snapshots:
       defaults: 1.0.4
 
   web-streams-polyfill@3.3.3: {}
-
-  web-vitals@3.5.2: {}
 
   webidl-conversions@3.0.1: {}
 
