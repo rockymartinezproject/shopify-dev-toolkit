@@ -1,19 +1,18 @@
 import { useState } from "react";
 import { useQuery } from "@apollo/client";
 import { Page, Card, Button, Pagination, Banner } from "@shopify/polaris";
-
+import {
+  EmptyStateAction,
+  InventoryDataTable,
+  ResourceSkeleton,
+  type InventoryRow,
+} from "@shopify-dev-toolkit/ui-components";
 import {
   GET_INVENTORY_WITH_COST,
   InventoryNode,
   flattenEdges,
   handleGraphQLErrors,
 } from "@shopify-dev-toolkit/graphql-queries";
-import {
-  InventoryDataTable,
-  ResourceSkeleton,
-  EmptyStateAction,
-} from "@shopify-dev-toolkit/ui-components";
-import type { InventoryRow } from "@shopify-dev-toolkit/ui-components";
 
 const PAGE_SIZE = 10;
 
@@ -48,7 +47,11 @@ export function InventoryPage() {
   return (
     <Page
       title="Inventory"
-      primaryAction={<Button onClick={() => fetchMore({ variables: { first: PAGE_SIZE, after } })}>Refresh</Button>}
+      primaryAction={
+        <Button onClick={() => void fetchMore({ variables: { first: PAGE_SIZE, after } })}>
+          Refresh
+        </Button>
+      }
     >
       {error && (
         <Banner title="Failed to load inventory" tone="critical">
@@ -61,7 +64,7 @@ export function InventoryPage() {
           heading="No inventory found"
           description="Sync your catalog to see inventory levels and costs."
           actionLabel="Refresh"
-          onAction={() => fetchMore({ variables: { first: PAGE_SIZE, after: null } })}
+          onAction={() => void fetchMore({ variables: { first: PAGE_SIZE, after: null } })}
         />
       ) : (
         <Card>
