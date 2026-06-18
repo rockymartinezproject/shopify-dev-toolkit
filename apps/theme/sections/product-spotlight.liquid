@@ -64,7 +64,7 @@
         {% endif %}
 
         {% if product != blank %}
-          <form method="post" action="/cart/add" class="flex flex-wrap items-center gap-4">
+          <form method="post" action="{{ routes.cart_add_url }}" class="flex flex-wrap items-center gap-4">
             <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
             <button
               type="submit"
