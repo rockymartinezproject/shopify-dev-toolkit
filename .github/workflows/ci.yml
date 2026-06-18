@@ -41,6 +41,7 @@ jobs:
         run: pnpm build
 
       - name: Theme Check
+        if: ${{ secrets.SHOPIFY_FLAG_STORE != '' && secrets.SHOPIFY_CLI_THEME_TOKEN != '' }}
         run: pnpm --filter theme lint
         env:
           SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_FLAG_STORE }}

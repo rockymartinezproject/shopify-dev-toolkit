@@ -49,7 +49,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Deploy theme
-        if: steps.changesets.outputs.published == 'true'
+        if: ${{ steps.changesets.outputs.published == 'true' && secrets.SHOPIFY_FLAG_STORE != '' && secrets.SHOPIFY_CLI_THEME_TOKEN != '' && secrets.SHOPIFY_THEME_ID != '' }}
         run: pnpm --filter theme deploy
         env:
           SHOPIFY_FLAG_STORE: ${{ secrets.SHOPIFY_FLAG_STORE }}
