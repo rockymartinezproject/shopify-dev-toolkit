@@ -10,10 +10,10 @@ import {
 } from "@shopify-dev-toolkit/graphql-queries";
 import {
   InventoryDataTable,
-  InventoryRow,
   ResourceSkeleton,
   EmptyStateAction,
 } from "@shopify-dev-toolkit/ui-components";
+import type { InventoryRow } from "@shopify-dev-toolkit/ui-components";
 
 const PAGE_SIZE = 10;
 
